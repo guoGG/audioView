@@ -2,6 +2,7 @@ package com.example.guojiawei.audioloading;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -20,6 +21,9 @@ public class AudioLoadView extends View {
     private Paint mAudioLinePaint;
     private int mBeatValue = 0;
 
+    int width;
+    int color;
+
     public AudioLoadView(Context context) {
         super(context);
         initPaint();
@@ -27,13 +31,16 @@ public class AudioLoadView extends View {
 
     public AudioLoadView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.audio);
+
+        color = ta.getColor(R.styleable.audio_color, 0x000000);
         initPaint();
 
     }
 
     private void initPaint() {
         mAudioLinePaint = new Paint();
-        mAudioLinePaint.setColor(Color.BLACK);
+        mAudioLinePaint.setColor(color);
         mAudioLinePaint.setStyle(Paint.Style.STROKE);
     }
 
@@ -52,6 +59,7 @@ public class AudioLoadView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         mAudioLinePaint.setStrokeWidth(mViewHeight / 8);
+
 
         int startX = 0 + 10;
 
