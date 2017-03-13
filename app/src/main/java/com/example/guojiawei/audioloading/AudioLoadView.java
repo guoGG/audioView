@@ -35,7 +35,7 @@ public class AudioLoadView extends View {
 
         color = ta.getColor(R.styleable.audio_color, 0x000000);
         initPaint();
-
+        ta.recycle();
     }
 
     private void initPaint() {
