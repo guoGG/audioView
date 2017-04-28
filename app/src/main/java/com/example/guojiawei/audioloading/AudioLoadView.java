@@ -21,8 +21,7 @@ public class AudioLoadView extends View {
     private Paint mAudioLinePaint;
     private int mBeatValue = 0;
 
-    int width;
-    int color;
+    private int color;
 
     public AudioLoadView(Context context) {
         super(context);

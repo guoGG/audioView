@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:padding="20dp"
+    android:orientation="vertical"
     tools:context="com.example.guojiawei.audioloading.MainActivity">
 
     <com.example.guojiawei.audioloading.AudioLoadView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:color="@color/colorAccent"
-        android:layout_centerInParent="true" />
-</RelativeLayout>
+        app:color="@color/colorAccent" />
+
+    <com.example.guojiawei.audioloading.tcview.LoadView
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>
